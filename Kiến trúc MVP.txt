@@ -1,0 +1,23 @@
+Kiến trúc MVP
+
+Là một mẫu kiến trúc phần mềm, viết tắt Model-View-Present.
+Mục tiêu: tách biệt logic hiển thị ra khỏi giao diện người dùng
+
+Các thành phần:
+
+Model: Chịu trách nhiệm cung cấp và quản lý dữ liệu (Từ api, room ...)
+
+View: Hiển thị giao diện và chuyển tiếp các sự kiện của người dùng
+
+Present: Nhận sự kiện từ view, lấy dữ liệu từ model, xử lý logic và ra lệnh cho view hiển thị 1 cái gì đó 1 cách tường minh
+
+Present giao tiếp với view thông qua 1 interface
+
+Luồng:
+1. Người dung tương tác view
+2. View gọi 1 hàm trên Presenter
+3. Presenter yêu cầu dl từ Model
+4. Model trả dl về cho Presenter
+5. Presenter xử lý logic và gọi 1 hàm trên interface cuwe view
+6. View triển khai hàm đó và cập nhật 
+

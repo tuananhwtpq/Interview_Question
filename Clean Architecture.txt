@@ -1,0 +1,39 @@
+Clean Architecture
+
+Là 1 kiến trúc phần mềm dựa trên dependency rule
+
+Dependency rule là quy tắc quy định:
+- Layer trong (level thấp) không được chứa source code của layer ngoài (có level cao hơn)
+- Bất cứ thay đổi ở layer ngoài ko làm ảnh hưởng tới layer trong, có nghĩa là sự phụ thuộc hướng vào trong
+
+Clean Architecture chia thành 2 layer: Entities, use cases, interface adapters và Framworks and driver.
+- Khi đi vào trong từ layer cao xuống layer thấp -> mức độ trừu tượng hóa sẽ được tăng lên (Mức độ phụ thuộc giảm đi)
+
+1. Entiries: Chứa business logic của cả hệ thống
+VD: app tin tức. Tạo ra 1 class News, thì News chính là 1 entiry của hệ thống
+
+2. Use cases: Chứa application specific business rules, thực hiện các use case của 1 ứng dụng dựa trên các entity object
+
+VD: use case thêm, sửa, xóa bài viết
+
+3. Interface adapters: Là layer dùng để chuyển đổi dữ liệu ở entities và use cases thành định dạng thuận tiện nhất để làm việc với các tác vụ như database, web service
+
+VD: ứng dụng sử dụng room
+- entities và use cases ko thể chứa soruces code về room db
+- interface adapter tạo ra các đối tượng như table, SQL query để làm việc thuận tiện nhất
+- Ngoài interface adapter, ko thành phần nào của clean architecture làm việc với room
+
+4. Frameworks and drivers: Đây là layer ngoài cùng, cho phép chúng ta đi vào chi tiết hóa yêu cầu của ứng dụng như UI, application behavior
+- Chỉ viết code liên quan việc chi tiết hóa như UI Design
+
+VD:
+Chúng ta sẽ import các UI Dependency như material và sử dụng code trong interface adapter để tọa UI
+- Điều hướng giữa các screen
+
+Ưu điểm:
+- Giúp business logic trở nên rõ ràng
+- Việc tách biệt thành các layer và tuân theo dependecy rule dễ dàng test, maintain
+
+Nhược điểm: Clean architecture phân tách cấu trúc nhiều tầng -> số lượng code sinh ra nhiều -> k phù hợp dự án nhỏ
+
+Khó hiểu, khó áp dụng với người mới

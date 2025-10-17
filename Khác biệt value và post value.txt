@@ -1,0 +1,12 @@
+Khác biệt value và post value
+
+
+value: Bắt buộc dùng trên luồng chính (Main thread)
+post value: có thể được dùng từ luồng nền (background thread)
+
+VD:
+- value (Gán trực tiếp): giống nhưu bạn đang ở trong phòng và nói trực tiếp với 1 người khác. Thông tin được cập nhật ngay lập tức
+
+- post value: (gửi giá trị): Giống như bạn gửi 1 tin nhắn từ bất cứ đâu. Người trong phòng sẽ nhận được tin nhắn sau 1 khoảnh khắc nhỏ
+
+Khi code đang chạy trong 1 coroutine ở luồng nền và cần cập nhật UI -> hãy dùng postValue. Trong trường hợp khác thì dùng .value

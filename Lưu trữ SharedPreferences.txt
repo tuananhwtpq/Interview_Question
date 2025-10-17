@@ -1,0 +1,9 @@
+Lưu trữ SharedPreferences:
+
+Lưu trữu các cặp dữ liệu key-value nhỏ
+
+quy trình gồm 3 bước:
+Bước 1: Lấy instance sủa sharedpref
+
+B2: Ghi dữ liệu (SỬ dụng editor)
+B3: Đọc dữ liệu: dùng get

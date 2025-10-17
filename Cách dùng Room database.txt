@@ -1,0 +1,26 @@
+Cách dùng Room database
+
+Bước 1: Thêm thư viện
+Bước 2: Tạo entity: Là 1 data class đại diện cho 1 bảng trong csdl. Mỗi thuộc tính trong class sẽ tương ứng với 1 cột trong bảng
+
+- SỬ dụng anotation @Entiry để đánh dấu là bảng
+- sử dụng @PrimaryKey để chỉ định khóa chính
+
+Bước 3: Tạo DAO ( Data access object)
+
+- Là 1 interface nơi định nghĩa các phương thức để truy cập vào csdl. Room sẽ tự động tạo ra mã nguồn cho interface này
+- Sử dụng anotation @Dao, @Insert, @Update, @Delete,
+- Sử dụng @Query để viết câu lệnh SQL
+- dùng suspend cho các hàm insert, update, delete để đảm bảo chusngd được gọi là coroutine
+
+Bước 4: Tạo lớp Database
+
+- Là 1 lớp abstract kế thừa từ RoomDatabase. Đóng vai trò là điểm truy cập chính vào csdl kết nối entiry và Dao lại với nhau
+
+- SỬ dụng anotation @Database, các entities và version
+
+- CUng cấp 1 hàm abstract để lấy ra Dao
+
+- thường được triển khai theo mẫu singleton để đảm bảo duy nhất 1 instance của db
+
+Bước 5: Sử dụng database, viết 1 Repository để sử dụng

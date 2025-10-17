@@ -1,0 +1,10 @@
+Sự khác nhau giữa add và replace Fragment
+
+Khi sử dụng add(): fragment cũ vẫn tiếp tục chạy và ko chạy vào hàm onPause, onStop -> Gây tốn bộ nhớ vì cả 2 fragment đều đang tồn tại và hoạt động
+
+Khi sử dụng replace(): fragment cũ chạy onPause(), onStop(). Sau đó khi sử dụng popBackStack() thì sẽ chạy lại onCreateView(), onStart(), onResume()
+
+Add: Giống như bạn đặt 1 tờ giấy mới chồng lên 1 tờ giấy cũ. Tờ giấy cũ vẫn nằm ở đó, nằm ngay bên dưới
+VD: đang ở tác bộ ngầm nào đó, đang download
+
+Replace: Giống cất tờ giấy cũ và đặt 1 tờ giấy mới vào đúng vị trí đó.

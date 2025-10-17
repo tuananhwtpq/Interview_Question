@@ -1,0 +1,23 @@
+Ưu điểm Single Activity
+
+- Đơn giản hóa việc điều hướng bằng navigation và chia sẻ dữ liệu giữa các màn hình, giúp code dễ quản lý và ổn định hơn
+- Quản lý navigation tập trung và an toàn
+- giảm lỗi do truyền sai dữ liệu nhờ safe args
+- chia sẽ dữ liệu dễ dàng
+- trải nghiệm người dùng mượt mà hơn
+- giảm tải cho hệ thống và nhất quán
+
+Kiến trúc cũ (multi-act): giống 1 ngôi nhà có nhiều phòng riêng biệt. Để đi từ phòng này sang phòng khác, cần 1 chìa khóa riêng (intent) và để chuyển đồ, cần đóng gói vào 1 chiếc hộp nhỏ (bundle)
+
+Kiến túc single-activity: giống 1 studio lớn, trong đó có nhiều khu vực chức năng khác nhau (fragment). Có thể tự do đi lại giữa các khu.
+
+Sử dụng nav controller:
+VD:
+- cách truyền thống: (Intent, FragmentManager ): giống như chỉ đường bằng miệng, lời chỉ dẫn rải rác khắp nơi
+- nav controller: giống như mn sử dụng chung google map, mọi con đường đều được vẽ trên 1 map.
+
+Ưu điểm:
+- QUản lý luồng tập trung và trực quan: tập trung luồng di chuyển đều ở nav_graph
+- An toàn dữ liệu với safe args
+- tự động quản lý fragment transaction
+- xử lý nút up và back nhất quán

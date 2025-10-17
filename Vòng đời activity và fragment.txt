@@ -1,0 +1,55 @@
+Vòng đời activity và fragment
+
+"Vòng đời của Activity là nền tảng quản lý một màn hình ứng dụng, trong khi vòng đời của Fragment là một vòng đời con, phụ thuộc và được điều khiển bởi Activity chứa nó. Điểm khác biệt lớn nhất là Fragment có một vòng đời riêng cho View của nó."
+
+Điểm khác biệt cốt lõi: Điểm khác biệt lớn nhất của fragment và sự tách biệt giữa vòng đời của nó với vòng đời của 1 view. 1 Fragment có thể vẫn tồn tại trong bộ nhớ (nếu onDestroy chưa được gọi ) ngay cả khi giao diện của nó đã bị hủy (onDestroyView đã được gọi).
+-> Quan trọng vì khi làm việc với popBackStack, nơi fragment được đưa trở lại mà k cần tạo mới, nhưng view thì cần được tạo mới.
+
+1. Vòng đời Activity: 
+
+Các trạng thái chính:
+Created (Được tạo): onCreate()
+
+Đây là nơi duy nhất bạn nên thực hiện các thao tác khởi tạo logic cốt lõi một lần, ví dụ như setContentView() hay khởi tạo ViewModel.
+
+Started (Bắt đầu): onStart()
+
+- Activity sắp được hiển thị cho người dùng.
+
+Resumed (Tiếp tục): onResume()
+
+- Activity đã hiển thị và người dùng có thể tương tác. Đây là trạng thái "chạy" chính thức.
+
+Paused (Tạm dừng): onPause()
+
+- Activity bị che một phần (ví dụ bởi một dialog) nhưng vẫn có thể nhìn thấy. Đây là nơi bạn nên dừng các tác vụ không cần thiết khi người dùng không tương tác trực tiếp.
+
+Stopped (Dừng lại): onStop()
+
+- Activity bị che hoàn toàn bởi một Activity khác. Giao diện không còn hiển thị.
+
+Destroyed (Bị hủy): onDestroy()
+
+- Activity bị hủy hoàn toàn để giải phóng tài nguyên.
+
+2. Vòng đời Fragment: 
+
+Các trạng thái chính (theo thứ tự):
+
+	onAttach(): Fragment được gắn vào Activity.
+
+	onCreate(): Logic khởi tạo không liên quan đến giao diện (giống onCreate của Activity).
+
+	onCreateView(): Quan trọng nhất. Đây là nơi layout (file XML) được "thổi phồng" (inflate) để tạo ra View.
+
+	onViewCreated(): Được gọi ngay sau khi View đã được tạo. Đây là nơi lý tưởng để thực hiện các thao tác cài đặt cho View (ví dụ: gán listener, thiết lập RecyclerView).
+
+	onStart() / onResume(): Tương ứng với Activity.
+
+	onPause() / onStop(): Tương ứng với Activity.
+
+	onDestroyView(): Quan trọng nhất. View của Fragment bị hủy. Đây là lúc bạn bắt buộc phải dọn dẹp mọi tham chiếu đến View (ví dụ: _binding = null) để tránh rò rỉ bộ nhớ (memory leak).
+
+	onDestroy(): Đối tượng Fragment sắp bị hủy.
+
+	onDetach(): Fragment được gỡ ra khỏi Activity.

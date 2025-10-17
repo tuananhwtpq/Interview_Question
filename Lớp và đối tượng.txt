@@ -1,0 +1,6 @@
+Lớp và đối tượng
+
+Sự khác biệt giữa Lớp (Class) và Đối tượng (Object) là một trong những khái niệm nền tảng nhất của lập trình hướng đối tượng (OOP).
+
+Nói một cách đơn giản: Lớp là bản thiết kế, còn Đối tượng là sản phẩm thực tế được tạo ra từ bản thiết kế đó.
+

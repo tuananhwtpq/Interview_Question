@@ -1,0 +1,14 @@
+Sự khác biệt giữa Overriding và Overloading
+
+Đa hình thời gian chạy
+Overriding (Ghi đè phương thức): Một lớp con định nghĩa lại phương thức của lớp cha và thực hiện phương thức đấy theo cách riêng của nó 
+
+Điều kiện: phương thức ở lớp con phải có cùng tên, cùng tham số, cùng kiểu trả về với phương thức ở lớp cha
+
+VD: Lớp Animal có phương thức makeSound(). Lớp Dog kế thừa từ lớp Animal ghi đè phương thức makeSound để phát ra tiếng sủa, trong khi lớp Cat ghi đè phương thức makeSound để phát ra tiếng kêu meo meo
+
+Đa hình thời gian biên dịch
+Overloading (Nạp chồng phương thức): Nhiều phương thức cùng tên nhưng có danh sách tham số khác nhau (VD khác nhau về số lượng, kiểu dữ liệu, thứ tự..)
+Điều kiện: Phải khác nhau về danh sách tham số, kiểu trả về có thể giống hoặc khác
+
+VD: phương thức add (int a, int b) và phương thức add(double a, double b) đều ở trong cùng 1 lớp và thực hiện chức năng cộng số nguyên hoặc số thực

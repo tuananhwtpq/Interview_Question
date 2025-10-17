@@ -1,0 +1,16 @@
+Có bao nhiêu loại Service
+
+Có 3 loại chính
+
+Foreground Service: chạy với thông báo hiển thị cho người dùng, ưu tiên cao, ko dễ bị hệ thống hủy. Thường dùng cho các tác vụ cần người dùng nhận biết (Như phát nhạc)
+
+Background Service: Chạy ngầm, ko có giao diện người dùng, dễ bị hủy khi thiếu tài nguyên. Dùng cho các tác vụ không cần tương tác trực tiếp
+
+VD: đồng bộ email định kì trong ứng dụng email
+
+Bound Service: Cho phép các thành phần như activity liên kết để tương tác và gọi phương thức của service. Tồn tại khi còn thành phần liên kết.
+
+VD: một ứng dụng tính toán phức tạp, activity sẽ liên kết với serrvice để nhận kết quả tính toán
+
+
+

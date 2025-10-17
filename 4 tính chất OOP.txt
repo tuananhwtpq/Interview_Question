@@ -1,0 +1,47 @@
+4 tính chất OOP
+
+1. Encapsulation (Tính đóng gói)
+
+Khái niệm: Gộp các thuộc tính và các phương thức tương tác với các thuộc tính nó vào cùng 1 đơn vị, cụ thể ở đây là class. Đồng thời che dấu chi tiết triển khai bên trong
+
+Mục đích: Bảo vệ tính toàn vẹn của dữ liệu, kiểm soát quyền truy cập. Đảm vào dữ liệu đầu vào luôn hợp lệ và ngăn chặn các tác động k mong muốn
+
+VD: Lớp BankAccount có thuộc tính balance (Số dư). Cta có thể tương tác với thuộc tính balance thông qua các pubic method, đồng thời trong các public method đó thì sẽ kiểm tra các điều kiện hợp lệ (VD như số tiền phải lớn hơn 0).
+
+2. Trừu tượng (Abstraction)
+
+Khái niệm: Chỉ hiển thị các chức năng thiết yếu của 1 đối tượng ra ngoài, ẩn đi các chi tiết kỹ thuật phức tạp ở bên trong
+
+Mục đích: giảm độ phức tạp, tập trung vào việc đối tượng có thể làm được "Cái gì" thay vì tập trung vào cách đối tượng đó làm việc như thế nào
+
+VD: Một chiếc điện thoại đều có chức năng nghe gọi, dù nó là nokia hay iphone. Ngta chỉ cần biết điện thoại có chức năng nghe gọi, chứ k cần biết chức năng đó được làm ra như thế nào
+
+3. Inheritance (Kế thừa)
+
+Khái niệm: Cho phép 1 lớp mới (Lớp con) được tạo ra dựa trên 1 lớp đã có sẵn (Lớp cha). Lớp con này thừa hưởng các thuộc tính và phương thức của lớp cha đó
+
+Mục tiêu: Tái sử dụng mã nguồn và xây dựng mối quan hệ phân cấp (Is a )
+
+VD: Lớp smartphone kế thừa từ lớp phone(), có các thuộc tính như là brand name và method call. Đồng thời có thêm các chức năng mới như là truy cập internet
+
+4. Polymorphism (Tính đa hình)
+
+Khái niệm: Cho phép các đối tượng thuộc các lớp khác nhau thực hiện cùng 1 hành động theo cách riêng của chúng
+
+Mục tiêu: Viết code linh hoạt và dễ mở rộng hơn
+
+Có 2 loại đa hình: dynamic và staic
+
+Dynamic polymorphism: 
+
+Sử dụng overriding (Ghi đè phương thức): Một lớp con định nghĩa lại phương thức của lớp cha để thực hiện theo cách riêng
+VD: Lớp animal có phương thức makeSound. Lớp Dog ghi đè lên để phát ra tiếng sủa, còn lớp Cat ghi đè lên để phát ra tiếng meo meo
+
+Static pylymorphism: 
+
+Sư dụng overloading (nạp chồng phương thức): nhiều phương thức cùng tên nhưng khác tham số hoặc kiểu trả về trong cùng 1 lớp
+VD: phương thức add (int a, int b) và add(double a, double b) trong cùng 1 lớp thực hiện cộng số nguyên hoặc số thực
+
+
+
+

@@ -1,0 +1,16 @@
+Trong Android, Migration (di chuyển dữ liệu) là quá trình bạn cập nhật cấu trúc (schema) của Room Database khi có sự thay đổi, mà không làm mất dữ liệu hiện có của người dùng.
+
+Bạn có thể hình dung database của bạn giống như một ngôi nhà 🏠, và các lớp @Entity là bản thiết kế của ngôi nhà đó. Migration chính là quá trình bạn cải tạo, sửa chữa ngôi nhà (ví dụ: xây thêm một phòng, đập một bức tường) mà không cần phải đập đi xây lại toàn bộ.
+
+Tại sao cần Migration?
+Khi bạn phát hành một phiên bản mới của ứng dụng, có thể bạn sẽ cần thay đổi cấu trúc của database. Ví dụ:
+
+Thêm một cột mới vào một bảng (ví dụ: thêm cột address vào bảng User).
+
+Đổi tên một cột.
+
+Thêm một bảng mới.
+
+Nếu bạn chỉ thay đổi code (@Entity) và tăng phiên bản version của database mà không cung cấp một kịch bản Migration, Room sẽ không biết phải làm gì với dữ liệu cũ. Khi đó, để tránh crash, Room sẽ sử dụng phương án mặc định là xóa toàn bộ database cũ và tạo lại một cái mới. Điều này sẽ làm mất hết dữ liệu của người dùng!
+
+Migration chính là "bản hướng dẫn cải tạo" mà bạn đưa cho Room để nó biết cách nâng cấp từ phiên bản cũ lên phiên bản mới một cách an toàn.

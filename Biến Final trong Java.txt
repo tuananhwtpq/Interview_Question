@@ -1,0 +1,40 @@
+Biến Final trong Java
+
+Biến final trong java phải được khởi tạo giá trị duy nhất 1 lần. Thời điểm khởi tạo phụ thuộc vào việc nó được khai báo ở đâu
+
+1. Biến instance: 
+Đây là biến final không phải static, thuộc về 1 đối tượng cụ thể. Nó phải được khởi tạo trước khi constructor của lớp thực thi xong
+
+Có 3 cách:
+	- Tại dòng khai báo: private final int MAX_PASS = 5;
+	- Trong 1 khối khởi tạo
+	vd: class Car {
+	final int MAX_PASS;
+	{
+		MAX_PASS = 5;
+	}
+}
+
+	- Bên trong constructor
+
+	VD: class Car {
+	final String lisence;
+
+	public Car (String license){
+		this.license = license	
+}
+}
+
+2. Biến Static (Static variable)
+Đây là biến static final, thường dùng để định nghĩa hằng số. Nó phải được khởi tạo khi lớp được nạp
+
+Nạp lớp (Class loading)
+	- là quá trình JVM đọc file .class và nạp thông tin vào bộ nhớ. Nó xảy ra 1 lần duy nhất cho mỗi lớp.
+
+Có 2 cách:
+	- tại dòng khai báo: public static final String APP_VERSION = 1
+	- trong 1 khối khởi tạo
+
+3. Biến local
+
+Đây là biến final được khai báo trong 1 phương thức. Nó k cần khởi tạo ngay lúc khai báo, nhưng phải được gán giá trị trước khi sử dụng lần đầu.

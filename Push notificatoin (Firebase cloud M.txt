@@ -1,0 +1,11 @@
+Push notificatoin (Firebase cloud Mesaing) FCM
+
+Tiêu chuẩn hiện nay là firebase cloud messaging FCM của google, là 1 dịch vụ trung gian cho phép máy chủ gửi thông báo tới ứng dụng 1 cách hiệu quả, ngay cả khi ứng dụng k đang chạy
+
+Cách triển khai:
+
+B1: Cài đặt firebase vào dự án
+B2: Lấy token và gửi về máy chủ của bạn
+B3: Tạo 1 Service để nhận tin nhắn - xử lý ở foreground
+B4: Khai báo service trong manifest
+B5: 

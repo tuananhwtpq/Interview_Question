@@ -1,0 +1,16 @@
+Ưu, nhược điểm Coroutine so với thread
+
+Ưu: 
+- Nhẹ và hiệu quả hơn nhiều:
+	Coroutine là các luồng siêu nhẹ. có thể chạy hàng nghìn coroutine trên 1 số lượng nhỏ thread.
+	Threads là các luồng chính của hệ điều hành. Việc tọa ra nó rất lặng, tốn nhiều bộ nhớ
+
+- Hủy bỏ cấu trúc: Coroutine được quản lý trong 1 coroutine scope. Khi hủy scope, tất cả các coroutine con sẽ được tự động hủy -> tránh rò rỉ bộ nhớ
+
+Thread k có cơ chế hủy bỏ cấu trúc
+
+- Code dễ đọc hơn 
+
+Nhược:
+- Cực kì hiệu quả với các tác vụ I/O- bound (các tác vụ chờ đợi nhưu gọi mạng, đọc ghi file). Nhưng đối các tác vụ CPU-bound (tính toán nặng, liên tục) thì nó k giúp CPU chạy nhanh hơn được
+

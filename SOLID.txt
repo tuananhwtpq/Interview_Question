@@ -1,0 +1,54 @@
+SOLID
+
+Năm nguyên tắc đó là:
+
+- S - Single Responsibility Principle (Nguyên tắc trách nhiệm đơn nhất)
+
+- O - Open/Closed Principle (Nguyên tắc đóng/mở)
+
+- L - Liskov Substitution Principle (Nguyên tắc thay thế Liskov)
+
+- I - Interface Segregation Principle (Nguyên tắc phân tách giao diện)
+
+- D - Dependency Inversion Principle (Nguyên tắc đảo ngược phụ thuộc)
+
+1. SRP
+Nguyên tắc Trách nhiệm đơn nhất (SRP) là nguyên tắc đầu tiên và có lẽ là dễ hiểu nhất. Nó phát biểu rằng:
+
+"Một lớp chỉ nên có một lý do duy nhất để thay đổi."
+
+Nói một cách khác, mỗi lớp chỉ nên chịu trách nhiệm cho một nhiệm vụ hoặc một chức năng cụ thể trong hệ thống. Nếu một lớp của bạn đang làm quá nhiều việc, nó đã vi phạm nguyên tắc này.
+
+2. Nguyên tắc đóng mở
+
+2. Open/Closed Principle (OCP) - Nguyên tắc Đóng/Mở 🚪
+Nguyên tắc này phát biểu rằng:
+
+"Các thực thể phần mềm (lớp, module, hàm, v.v.) nên có thể được mở rộng (open for extension) nhưng phải đóng với việc sửa đổi (closed for modification)."
+
+Nói đơn giản là, khi bạn muốn thêm một chức năng mới, bạn nên viết thêm code mới chứ không phải sửa đổi code cũ đã chạy ổn định.
+
+3. 3. Liskov Substitution Principle (LSP) - Nguyên tắc thay thế Liskov 🐦
+Nguyên tắc này khá học thuật, nhưng có thể hiểu đơn giản là:
+
+"Các đối tượng của lớp con phải có thể thay thế các đối tượng của lớp cha mà không làm thay đổi tính đúng đắn của chương trình."
+
+Nghĩa là, nếu bạn có một hàm đang hoạt động với lớp cha A, thì nó cũng phải hoạt động chính xác y như vậy khi bạn thay thế A bằng một lớp con B của nó. Lớp con không được "phá vỡ" hành vi mong đợi của lớp cha.
+
+4. Interface Segregation Principle (ISP) - Nguyên tắc phân tách giao diện 🔪
+Nguyên tắc này nói rằng:
+
+"Client không nên bị buộc phải phụ thuộc vào những phương thức mà nó không sử dụng."
+
+Nói đơn giản là, thay vì tạo ra một interface "béo phì" (fat interface) với quá nhiều phương thức, hãy chia nhỏ nó thành nhiều interface nhỏ hơn, cụ thể hơn.
+
+5. Dependency Inversion Principle (DIP) - Nguyên tắc đảo ngược phụ thuộc 🔄
+Nguyên tắc này gồm hai ý:
+
+1. Các module cấp cao không nên phụ thuộc vào các module cấp thấp. Cả hai nên phụ thuộc vào một abstraction (interface).
+2. Abstraction không nên phụ thuộc vào chi tiết. Chi tiết nên phụ thuộc vào abstraction.
+
+Đây là nguyên tắc khó hiểu nhất, nhưng cốt lõi của nó là "Hãy lập trình dựa trên interface, không phải implementation (lớp cụ thể)". Nó giúp giảm sự phụ thuộc cứng giữa các thành phần trong hệ thống, làm cho code linh hoạt và dễ thay đổi hơn. Đây chính là nền tảng của kỹ thuật Dependency Injection (DI).
+
+
+

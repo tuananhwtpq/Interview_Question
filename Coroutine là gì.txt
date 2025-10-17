@@ -1,0 +1,11 @@
+Coroutine là gì?
+
+Coroutines là các luồng nhẹ (lightweight threads) cho phép bạn viết code bất đồng bộ 1 cách tuần tự và đơn giản
+
+SỬ dụng coroutine tốt hơn so với các phương pháp truyền thống nhử là (Callbacks, RxJava hay Threads) vì nó giải quyết được 2 vấn đề lớn của lập trình bất đồng bộ:
+
+Thứ nhất: Nó tránh được việc code bị lồng vào nhau nhiều tầng, khó đọc, khó bảo trì
+Thứ 2: Việc quản lý phức tạp. Coroutine tự động quản lý vòng đời và hủy bỏ tác vụ, tránh rò rỉ bộ nhớ
+
+Có thể chạy hàng ngàn coroutine trên 1 lượng nhỏ các thread hệ thống. Việc tạo ra 1 coutoutine gần như k tốn chi phí, trong khi việc tạo ra thread mới là 1 tác vụ nặng cho hệ điều hành
+

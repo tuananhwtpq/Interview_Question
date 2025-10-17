@@ -1,0 +1,67 @@
+1. Activity 📱 (Màn hình)
+Mục đích: Là thành phần đại diện cho một màn hình có giao diện người dùng (UI). Đây là cửa sổ để người dùng tương tác với ứng dụng.
+
+Ví dụ dễ hiểu: Mỗi màn hình bạn thấy trong ứng dụng - màn hình đăng nhập, màn hình chính, màn hình cài đặt - đều là một Activity.
+
+Điểm chính cần nhấn mạnh:
+
+Là điểm vào (entry point) chính cho sự tương tác của người dùng.
+
+Vòng đời (Lifecycle) của nó (onCreate, onStart, onResume...) là kiến thức nền tảng bắt buộc phải nắm vững để quản lý tài nguyên và trạng thái của ứng dụng.
+
+Khai báo: Trong AndroidManifest.xml bằng thẻ <activity>. Activity khởi chạy đầu tiên sẽ có intent-filter với action MAIN và category LAUNCHER.
+
+2. Service ⚙️ (Dịch vụ)
+Mục đích: Thực hiện các tác vụ chạy ngầm dài hạn hoặc cung cấp chức năng cho các ứng dụng khác mà không cần giao diện người dùng.
+
+Ví dụ dễ hiểu: Giống như một nhân viên làm việc ở hậu trường, đảm bảo mọi thứ vận hành trơn tru ngay cả khi sân khấu (Activity) đã hạ màn.
+
+Các điểm chính cần nhấn mạnh:
+
+Luồng (Thread): Mặc định, Service chạy trên luồng chính (Main Thread). Vì vậy, các tác vụ nặng (tải file, xử lý CSDL) phải được thực hiện trong một luồng riêng do Service tạo ra để tránh làm treo ứng dụng (lỗi ANR).
+
+Các loại Service:
+
+Foreground Service: Dành cho các tác vụ người dùng cần nhận biết (ví dụ: chơi nhạc, ghi âm, theo dõi vị trí). Bắt buộc phải đi kèm một Notification hiển thị liên tục.
+
+Background Service: Dành cho các tác vụ người dùng không cần thấy trực tiếp. (Quan trọng khi phỏng vấn): Kể từ Android 8 (Oreo), Background Service bị hạn chế rất nhiều để tiết kiệm pin. Hầu hết các tác vụ chạy ngầm không yêu cầu ngay lập tức bây giờ nên được thực hiện bằng WorkManager. Nhắc đến WorkManager là một điểm cộng rất lớn.
+
+Bound Service: Hoạt động theo mô hình client-server, cho phép các thành phần khác (như Activity) "kết nối" (bind) vào và tương tác. Service chỉ tồn tại khi còn ít nhất một client đang kết nối.
+
+Khai báo: Trong AndroidManifest.xml bằng thẻ <service>.
+
+3. Broadcast Receiver 📡 (Bộ thu sóng)
+Mục đích: Lắng nghe và phản hồi các thông báo (broadcast Intent) được gửi đi từ hệ thống hoặc từ các ứng dụng khác.
+
+Ví dụ dễ hiểu: Giống như một chiếc radio, nó được "dò" để bắt đúng tần số (sự kiện) mà nó quan tâm, ví dụ như tin báo "pin yếu" hay "có kết nối WiFi".
+
+VD: ứng dụng Lịch, hệ thống android khi cắm sạc -> lắng nghe sự kiện "Đã kết nối nguồn điện"
+
+Các điểm chính cần nhấn mạnh:
+
+Hai cách đăng ký:
+
+Tĩnh (Static - trong Manifest): Cho phép ứng dụng nhận broadcast ngay cả khi nó không chạy (ví dụ: BOOT_COMPLETED). (Quan trọng khi phỏng vấn): Kể từ Android 7/8, hầu hết các broadcast ngầm (implicit broadcast) không còn được gửi đến các receiver đăng ký trong Manifest để tiết kiệm pin.
+
+Động (Dynamic - trong Code): Chỉ nhận broadcast khi thành phần đăng ký nó (ví dụ: Activity) đang tồn tại. Đây là cách được ưu tiên cho hầu hết các trường hợp không yêu cầu khởi chạy app từ trạng thái đóng.
+
+Thời gian xử lý: onReceive() của Broadcast Receiver chỉ có một khoảng thời gian rất ngắn (khoảng 10 giây) để thực thi. Các tác vụ dài hạn nên được chuyển cho Service hoặc WorkManager.
+
+Khai báo: Trong AndroidManifest.xml bằng thẻ <receiver> hoặc trong code bằng registerReceiver().
+
+4. Content Provider 📚 (Nhà cung cấp nội dung)
+Mục đích: Cung cấp một giao diện chuẩn hóa và an toàn để chia sẻ dữ liệu của ứng dụng cho các ứng dụng khác.
+
+Ví dụ dễ hiểu: Giống như một người thủ thư quản lý kho sách chung. Các ứng dụng khác muốn lấy thông tin (sách) phải thông qua người thủ thư này theo đúng quy tắc, chứ không được tự ý vào kho lục lọi. Ứng dụng Danh bạ là ví dụ điển hình nhất.
+
+VD: Ứng dụng Danh bạ hoặc ứng dụng Thư viện ảnh (Gallery)
+
+Các điểm chính cần nhấn mạnh:
+
+Cơ chế hoạt động: Một ứng dụng khác (client) sẽ dùng đối tượng ContentResolver để gửi yêu cầu đến Content Provider của ứng dụng bạn.
+
+URI (Uniform Resource Identifier): Mỗi tập dữ liệu được quản lý bởi Content Provider có một URI duy nhất để định danh, ví dụ: content://com.android.contacts/contacts.
+
+Tách biệt dữ liệu: Nó giúp che giấu chi tiết về cách dữ liệu được lưu trữ (SQLite, file, mạng...), client chỉ cần biết URI và cách tương tác qua các phương thức chuẩn (query, insert, update, delete).
+
+Khai báo: Trong AndroidManifest.xml bằng thẻ <provider>, với thuộc tính android:authorities là URI định danh duy nhất.

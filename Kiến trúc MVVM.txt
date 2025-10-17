@@ -1,0 +1,24 @@
+Kiến trúc MVVM
+
+MVVM là 1 mẫu kiến trúc phần mềm, viết tắt Model - View - ViewModel. Mục tiêu chính của nó là tách biệt hoàn toàn phần giao diện người dùng (View) ra khỏi logic xử lý dữ liệu (Model) thông qua 1 lớp trung gian là ViewModel
+
+Để dễ hình dung, nó hoạt động như 1 mô hình nhà hàng
+
+View thực khách: chỉ tương tác với người phục vụ, không biết món ăn được nấu ntn
+
+ViewModel là người phục vụ: Nhận yêu cầu từ khách, chuyển vào bếp và mang đồ ăn đã chuẩn bị ra.
+
+Model là nhà bếp: Nơi chứa nguyên liệu và logic để nấu món ăn
+
+Vai trò:
+
+View (Activity/ Fragment): Hiển thị dữ liệu từ viewmodel và gửi các sự kiện onclick cho viewmodel
+
+Viewmodel: Là cầu nối, lấy dữ liệu từ model, chuẩn bị và gửi lại dữ liệu đó cho view để hiển thị. Điểm đặc biệt là viewmodel không bị ảnh hưởng bởi vòng đời của view (khi xoay màn hình sẽ không bị mất dl)
+
+Model (Repository, database, api: Chịu trách nhiệm  cung cấp dữ liệu và xử lý logic nghiệp vụ. Nó hoàn toàn độc lập và k biết đến sự tồn tại của view hay view model
+
+Ưu điểm:
+- Dễ kiểm thử: 
+- Dễ bảo trì : tách biệt rõ ràng giúp code dễ đọc, dễ sửa lỗi
+- nhận biết vòng đời: viewmodel sống sốt qua các thay đổi cấu hình như xoay màn hình, giải quyết vấn đè mất dl và tải lại

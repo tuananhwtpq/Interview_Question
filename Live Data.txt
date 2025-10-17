@@ -1,0 +1,25 @@
+Live Data
+
+Live data là 1 lớp chứa dữ liệu có thể quan sát (observable) vfa quan trọng nhất nó nhận biết được vòng đời. 
+Mục đích tạo ra cầu nối an toàn và hiệu quả giữa lớp dữ liệu (viewmodel) và lớp giao diện (activity/fragment)
+
+Dễ hiểu thì live data giống như đăng ký nhận 1 tờ báo thông minh
+
+Tờ báo (live data): nắm giữ thông tin (dữ liệu)
+Bạn (view - activity/fragment): Người đọc báo
+Tòa soạn (View model): nơi cập nhật thông tin cho tờ báo
+
+Điềm đặc biệt ở đây là tờ báo sẽ chỉ được giao đến nhà bạn khi bạn có ở nhà và thức (Tức là ở trạng thai onStart và onResume)
+
+Ưu điểm liveData:
+
+Tạo ra luồng dữ liệu có thể quan sat: view có thể đăng ký theo dõi live data. Khi nào dữ liệu live data thay đổi, view cũng sẽ được tự động cập nhật theo
+
+NHận biết được vòng đời: live data chỉ gửi dl khi view đang ở trạng thái hoạt động và tự hủy đăng ký khi view bị hủy
+
+Không gây rò rỉ bộ nhớ: Livedata sẽ tự động hủy đăng ksy các observer khi vòng đời chúng kết thúc
+
+Dữ liệu luôn được cập nhật:
+Khi 1 activity hoặc fragmnet quay trở lại từ trạng thái stopped, nó sẽ nhận được dữ liệu mới nhất từ livedata
+
+Xử lý tốt khi xoay màn hình

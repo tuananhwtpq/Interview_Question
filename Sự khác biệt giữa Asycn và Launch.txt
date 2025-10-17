@@ -1,0 +1,17 @@
+Sự khác biệt giữa Asycn và Launch
+
+- Launch giống như bạn đặt đồ ăn giao về nhà. Bạn đặt xong (khởi chạy coroutine ), nhận được hóa đơn (Job) rồi đi làm việc khác. Món ăn đc tự động giao đến sau khi hoàn thành. Bạn k cần đứng chờ để lấy kết quả.
+
+- Asycn: giống như đặt 1 ly cà phê mang đi. Đặt xong, nhận 1 phiếu chờ. Bạn phải đứng đợi đến khi cà phê được làm xong và lấy nó ( .await()). 
+
+Khi nào dùng launch: Khi bạn muốn thực hiện 1 hành động và ko cần quan tâm đến kết quả của nó
+
+vd: gửi 1 email. bạn bấm gửi, email được gửi, bạn tiếp tục làm việc khác ngay
+
+vd: cập nhật 1 bản ghi trong csdl
+- gửi 1 api call mà k cần chờ phản hồi
+
+Khi nào dùng async: Khi bạn muốn thực hiện 1 hành động và lấy kết quả của nó để sử dụng cho 1 công việc khác.
+
+VD: thực hiện nhiều tác vụ song song cùng lúc rồi gộp kết quả lại
+- thực hiện 1 phép tính toán nặng ở luồng nền và lấy kết quả hiển thị lên giao diện

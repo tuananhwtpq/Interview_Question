@@ -1,0 +1,16 @@
+Xin cấp quyền
+
+Để xin quyền trong android, cần thực hiện 1 quy trình gồm
+Thứ nhất: Khai báo trong manifest
+Thứ 2: Yêu cầu tại thời điểm chạy (runtime)
+
+Phân loại quyền: chia làm 2 loại
+
+Quyền thông thường (VD internet) -> được cấp tự động khi cài đặt ứng dụng
+
+Quyền nguy hiểm: liên quan đến dữ liệu cá nhân (Camera, READ_CONTACT, đọc file, xin đchi) -> bắt buộc phải hỏi người dùng một cách tường minh
+
+B1: Khai báo quyền trong Manifest
+B2: Đăng ký 1 ActivityResultLauncher
+B3: Kiểm tra và yêu cầu quyền khi cần
+

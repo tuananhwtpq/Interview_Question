@@ -1,0 +1,19 @@
+Các Design pattern phổ biến
+
+Singleton: Đảm bảo 1 lớp chỉ có 1 thực thể (instance duy nhất) và cung cấp 1 điểm truy cập toàn cục đến nó
+-> VD: tạo instance cho room db, retrofit hoặc repo
+
+Builder: Tách biệt việc xây dựng một đối tượng phức tạp khỏi cách thể hiển của nó. CHo phép tạo ra các đối tượng khác nhau bằng 1 quy trình xây dưnhj
+
+VD: AlertDialog.Builder
+
+Factory Method: Địn nghĩa 1 interface để tạo đối tượn, nhưng để các lướp con quyết định lớp nào sẽ được khởi tạo
+
+VD: tạo factory cho viewmodel có tham số constructor
+
+Adapter: 
+
+Observer: định nghĩa 1 mối quan hệ 1 nhiều. Khi 1 đối tượng thay đổi trạng thái, tất cả các đối tượng phụ thuộc sẽ được thông báo và tự động cập nhật
+
+VD: liveData trong observer pattern
+

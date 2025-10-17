@@ -1,0 +1,22 @@
+Abstract và interface
+
+1. Về mục đích thiết kế (Đây là điểm cốt lõi nhất)
+"Điểm khác biệt lớn nhất nằm ở mục đích sử dụng của chúng:"
+
+Abstract Class được dùng để định nghĩa bản chất của một nhóm đối tượng có liên quan chặt chẽ. Nó trả lời cho câu hỏi "Nó là gì?" (mối quan hệ "is-a"). Mục đích chính là để chia sẻ code chung giữa các lớp con.
+
+Interface được dùng để định nghĩa một khả năng hoặc một "hợp đồng hành vi". Nó trả lời cho câu hỏi "Nó có thể làm gì?" (mối quan hệ "can-do"). Mục đích là để bắt buộc một lớp phải thực thi các phương thức nhất định, bất kể lớp đó thuộc loại nào.
+
+2. Về đặc điểm kỹ thuật
+"Từ mục đích trên, chúng có vài khác biệt kỹ thuật quan trọng:"
+
+Kế thừa: Một lớp chỉ có thể extends (kế thừa) từ một Abstract Class, nhưng có thể implements (triển khai) nhiều Interface. Đây là cách Java giải quyết vấn đề đa kế thừa.
+
+Thành phần bên trong:
+
+Abstract Class có thể chứa cả phương thức đã được triển khai (có code) và phương thức trừu tượng (chưa có code). Nó cũng có thể chứa các thuộc tính (biến) với mọi access modifier và có constructor.
+
+Interface theo truyền thống chỉ chứa các hằng số (public static final) và các phương thức trừu tượng. (Anh/chị có thể nói thêm: Từ Java 8, Interface có thể có cả default và static methods để tăng tính linh hoạt).
+
+
+Tóm lại, em sẽ chọn Abstract Class khi các đối tượng có mối quan hệ 'is-a' chặt chẽ và em muốn tái sử dụng code. Ngược lại, em sẽ chọn Interface khi em muốn định nghĩa một hành vi mà nhiều lớp không liên quan có thể cùng thực hiện."

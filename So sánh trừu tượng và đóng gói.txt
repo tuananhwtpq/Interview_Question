@@ -1,0 +1,9 @@
+So sánh trừu tượng và đóng gói:
+
+
+Bạn có thể hình dung đơn giản như sau:
+
+Trừu tượng (Abstraction) tập trung vào việc che giấu sự phức tạp và chỉ hiển thị những gì cần thiết ra bên ngoài. Nó trả lời câu hỏi: "Cái này làm được gì?"
+
+Đóng gói (Encapsulation) tập trung vào việc bảo vệ dữ liệu bằng cách gói dữ liệu và các phương thức xử lý dữ liệu đó vào chung một nơi. Nó trả lời câu hỏi: "Làm thế nào để bảo vệ dữ liệu bên trong?"
+

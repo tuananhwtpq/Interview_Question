@@ -1,0 +1,10 @@
+Chào anh/ chị ,
+Em là Trần Tuấn Anh, hiện đang là sinh viên năm 4 trường Đại học Công Nghiệp Hà Nội.
+Em biết đến thông tin tuyển dụng vị Lập trình viên Android của công ty mình qua nhóm facebook Lập trình Android và xin phép được gửi email ứng tuyển.
+Về kinh nghiệm, em đã có 8 tháng kinh nghiệm trong lĩnh vực lập trình Android. Ngoài ra, em có khả năng sử dụng thành thạo Kotlin/ Java, thành thạo ứng dụng các mô hình kiến trúc như MVVM và có kinh nghiệm tích hợp APIs, SDK và thư viện bên thứ 3.
+Trong quá trình học tập, em đã có cơ hội tham gia các dự án nhỏ như: Tạo app mạng xã hội thu nhỏ (tên app là HIT CHILL&CHILL), app Quản lý đặt đồ ăn (Tên app là Food Ordering) và app quản lý chi tiêu cá nhân (Money Management).
+Ngoài ra, em có kỹ năng tự học, kỹ năng sử dụng các công cụ như Github, Trello, Postman,...
+Hồ sơ ứng tuyển của em bao gồm:
+CV cá nhânNếu phù hợp, em rất mong có cơ hội được trao đổi thêm với anh/ chị trong buổi phỏng vấn để trình bày rõ hơn về năng lực và mong muốn đóng góp cho công ty. Nếu cần thêm thông tin, anh/ chị có thể liên hệ với em qua email này hoặc số điện thoại: 0978336575.
+Mong sớm nhận được phản hồi của anh/ chị.
+Cảm ơn anh/ chị. 

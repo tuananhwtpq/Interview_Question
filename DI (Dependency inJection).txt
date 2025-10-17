@@ -1,0 +1,17 @@
+DI (Dependency inJection) 
+
+Là 1 design pattern trong đó 1 đối tượng ko tự tạo ra các phụ thuộc (dependencies) của mình, mà thay vào đó các phụ tuojc này được cung cấp hoặc tiêm từ ngoài vào
+
+Dễ hiểu thì:
+
+Cách làm truyền thống: CÓ 1 nhà máy xe hơi, thay vì lắp ráp các bộ phận có sẵn, nhà máy phải tự chế tạo động cơ bên trong khung xe -> Chiếc xe sẽ bị gắn chặt vào động cơ -> kho thay thế
+
+Còn cách làm với DI: Nhà máy chie sản xuất khung xe với 1 khoang trống để chứa động cơ. 1 nhà máy khác sẽ chuyên sản xuất động cơ. Khi lắp ráp, động cơ sẽ được tiêm vào khoang trống đó.
+
+VD: tiêm repository vào viewmodel qua constructor
+
+-> Dễ kiểm thử
+-> Tách biệt và tái sử dụng code
+-> Dễ quản lý và mở rộng
+
+Thư viện DI phổ biến bao gồm: Hild, Dagger2, Koin
